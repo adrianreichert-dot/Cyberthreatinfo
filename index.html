@@ -1,0 +1,1679 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CyberThreat | World's Most Dangerous Computer Viruses</title>
+
+<style>
+
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080c14;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(5, 10, 20, 0.95);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #00ff9d33;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #00ff9d;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00ff9d;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+
+    background:
+        radial-gradient(circle at center, #102b2a, transparent 60%),
+        #080c14;
+}
+
+.hero-content {
+    max-width: 950px;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #00ff9d;
+    border-radius: 30px;
+    color: #00ff9d;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 85px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #00ff9d;
+}
+
+.hero p {
+    color: #aab5c5;
+    font-size: 19px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: #00ff9d;
+    color: #07100d;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px #00ff9d77;
+}
+
+/* ===========================
+   ANIMATED BACKGROUND
+=========================== */
+
+.grid-background {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(#00ff9d08 1px, transparent 1px),
+        linear-gradient(90deg, #00ff9d08 1px, transparent 1px);
+
+    background-size: 50px 50px;
+
+    animation: moveGrid 20s linear infinite;
+}
+
+@keyframes moveGrid {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 50px 50px;
+    }
+}
+
+/* ===========================
+   STATISTICS
+=========================== */
+
+.stats {
+    padding: 70px 8%;
+    background: #0d1420;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #1d3440;
+    border-radius: 10px;
+}
+
+.stat-box h2 {
+    color: #00ff9d;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    color: #9daabb;
+    font-size: 14px;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+
+section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: #00ff9d;
+}
+
+.section-title p {
+    color: #99a9bb;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+/* ===========================
+   SEARCH BAR
+=========================== */
+
+.search-container {
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 18px 25px;
+    background: #111c2b;
+    border: 1px solid #284050;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-container input:focus {
+    border-color: #00ff9d;
+    box-shadow: 0 0 15px #00ff9d22;
+}
+
+/* ===========================
+   VIRUS CARDS
+=========================== */
+
+.virus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.virus-card {
+    background: #101a29;
+    border: 1px solid #223344;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.virus-card:hover {
+    transform: translateY(-10px);
+    border-color: #00ff9d;
+    box-shadow: 0 15px 40px #00000066;
+}
+
+.card-top {
+    padding: 30px;
+    background: linear-gradient(135deg, #172b35, #101a29);
+}
+
+.virus-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.virus-card h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.year {
+    color: #00ff9d;
+    font-size: 14px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card-body p {
+    color: #a8b5c5;
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #263545;
+    padding: 12px 0;
+    font-size: 13px;
+}
+
+.info-row span:first-child {
+    color: #8fa0b5;
+}
+
+.info-row span:last-child {
+    color: white;
+    font-weight: bold;
+}
+
+.danger {
+    margin-top: 25px;
+}
+
+.danger-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.danger-bar {
+    width: 100%;
+    height: 7px;
+    background: #263545;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.danger-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff9d, #ffcc00, #ff4444);
+    border-radius: 10px;
+}
+
+/* ===========================
+   TIMELINE
+=========================== */
+
+.timeline {
+    background: #0d1420;
+}
+
+.timeline-container {
+    max-width: 900px;
+    margin: auto;
+    border-left: 2px solid #00ff9d;
+    padding-left: 40px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 45px;
+    background: #121f2e;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -49px;
+    top: 30px;
+    width: 15px;
+    height: 15px;
+    background: #00ff9d;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #00ff9d;
+}
+
+.timeline-item h3 {
+    color: #00ff9d;
+    margin-bottom: 10px;
+}
+
+.timeline-item h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    color: #aab5c5;
+    line-height: 1.7;
+}
+
+/* ===========================
+   TERMINAL
+=========================== */
+
+.terminal-section {
+    background: #080c14;
+}
+
+.terminal {
+    max-width: 900px;
+    margin: auto;
+    background: #050a0c;
+    border: 1px solid #00ff9d55;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 40px #00ff9d11;
+}
+
+.terminal-header {
+    background: #17232b;
+    padding: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.terminal-body {
+    padding: 30px;
+    font-family: Consolas, monospace;
+    color: #00ff9d;
+    min-height: 300px;
+    line-height: 2;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ===========================
+   PROTECTION
+=========================== */
+
+.protection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.protection-card {
+    padding: 35px;
+    background: #101a29;
+    border-radius: 10px;
+    border: 1px solid #223344;
+}
+
+.protection-card h3 {
+    color: #00ff9d;
+    margin-bottom: 15px;
+}
+
+.protection-card p {
+    color: #aab5c5;
+    line-height: 1.8;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer {
+    background: #05090f;
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid #1d3440;
+}
+
+footer h2 {
+    color: #00ff9d;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #8393a5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+
+@media (max-width: 1000px) {
+
+    .virus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .protection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .virus-grid,
+    .stats,
+    .protection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===========================
+     NAVIGATION
+=========================== -->
+
+<nav>
+
+    <div class="logo">
+        CYBER<span>THREAT</span>
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#viruses">Viruses</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#terminal">Terminal</a></li>
+        <li><a href="#protection">Protection</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- ===========================
+     HERO
+=========================== -->
+
+<header class="hero" id="home">
+
+    <div class="grid-background"></div>
+
+    <div class="hero-content">
+
+        <div class="badge">
+            CYBERSECURITY HISTORY DATABASE
+        </div>
+
+        <h1>
+            THE WORLD'S<br>
+            <span>MOST DANGEROUS</span><br>
+            COMPUTER VIRUSES
+        </h1>
+
+        <p>
+            Explore the history of some of the most destructive
+            malware outbreaks ever recorded.
+
+            From massive ransomware attacks to sophisticated
+            cyberweapons, discover how malicious software
+            changed the digital world.
+        </p>
+
+        <a href="#viruses" class="btn">
+            EXPLORE THREATS →
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ===========================
+     STATISTICS
+=========================== -->
+
+<div class="stats">
+
+    <div class="stat-box">
+        <h2>1988</h2>
+        <p>Year of the Morris Worm</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>150+</h2>
+        <p>Countries Affected by WannaCry</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>300K+</h2>
+        <p>Computers Hit by WannaCry</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>$10B+</h2>
+        <p>Estimated Global NotPetya Damage</p>
+    </div>
+
+</div>
+
+
+<!-- ===========================
+     VIRUS DATABASE
+=========================== -->
+
+<section id="viruses">
+
+    <div class="section-title">
+
+        <h2>
+            HISTORIC <span>CYBER THREATS</span>
+        </h2>
+
+        <p>
+            Explore eight infamous malware families and outbreaks
+            that caused major disruptions around the world.
+            Not all of them are technically computer viruses:
+            some are worms, ransomware, or other forms of malware.
+        </p>
+
+    </div>
+
+    <div class="search-container">
+
+        <input
+            type="text"
+            id="virusSearch"
+            placeholder="Search malware by name, year, or type..."
+            onkeyup="searchViruses()"
+            aria-label="Search malware"
+        >
+
+    </div>
+
+    <div class="virus-grid" id="virusGrid">
+
+        <!-- ILOVEYOU -->
+
+        <div class="virus-card">
+
+            <div class="card-top">
+                <div class="virus-icon">💌</div>
+                <h3>ILOVEYOU</h3>
+                <span class="year">Discovered: 2000</span>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    The ILOVEYOU worm spread through email
+                    messages containing an attachment disguised
+                    as a love letter.
+
+                    Once executed, it spread to contacts and
+                    overwrote certain types of files.
+                </p>
+
+                <div class="info-row">
+                    <span>Malware Type</span>
+                    <span>Email Worm</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Year</span>
+                    <span>2000</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Primary Method</span>
+                    <span>Email Attachment</span>
+                </div>
+
+                <div class="danger">
+
+                    <div class="danger-label">
+                        <span>Historical Impact</span>
+                        <span>95%</span>
+                    </div>
+
+                    <div class="danger-bar">
+                        <div class="danger-fill" style="width:95%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- WANNACRY -->
+
+        <div class="virus-card">
+
+            <div class="card-top">
+                <div class="virus-icon">🔒</div>
+                <h3>WannaCry</h3>
+                <span class="year">Discovered: 2017</span>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    WannaCry was a ransomware worm that
+                    spread rapidly across vulnerable Windows
+                    computers.
+
+                    It encrypted files and demanded payment
+                    to restore access.
+                </p>
+
+                <div class="info-row">
+                    <span>Malware Type</span>
+                    <span>Ransomware Worm</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Year</span>
+                    <span>2017</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Primary Method</span>
+                    <span>SMB Vulnerability</span>
+                </div>
+
+                <div class="danger">
+
+                    <div class="danger-label">
+                        <span>Historical Impact</span>
+                        <span>98%</span>
+                    </div>
+
+                    <div class="danger-bar">
+                        <div class="danger-fill" style="width:98%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MYDOOM -->
+
+        <div class="virus-card">
+
+            <div class="card-top">
+                <div class="virus-icon">📧</div>
+                <h3>Mydoom</h3>
+                <span class="year">Discovered: 2004</span>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    Mydoom became one of the fastest-spreading
+                    email worms of its era.
+
+                    It generated enormous amounts of email
+                    traffic and was associated with
+                    distributed denial-of-service attacks.
+                </p>
+
+                <div class="info-row">
+                    <span>Malware Type</span>
+                    <span>Email Worm</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Year</span>
+                    <span>2004</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Primary Method</span>
+                    <span>Email Propagation</span>
+                </div>
+
+                <div class="danger">
+
+                    <div class="danger-label">
+                        <span>Historical Impact</span>
+                        <span>97%</span>
+                    </div>
+
+                    <div class="danger-bar">
+                        <div class="danger-fill" style="width:97%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONFICKER -->
+
+        <div class="virus-card">
+
+            <div class="card-top">
+                <div class="virus-icon">🌐</div>
+                <h3>Conficker</h3>
+                <span class="year">Discovered: 2008</span>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    Conficker infected millions of Windows
+                    computers and created a large botnet.
+
+                    It exploited Windows vulnerabilities
+                    and used multiple techniques to
+                    maintain infections.
+                </p>
+
+                <div class="info-row">
+                    <span>Malware Type</span>
+                    <span>Network Worm</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Year</span>
+                    <span>2008</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Primary Method</span>
+                    <span>Network Exploitation</span>
+                </div>
+
+                <div class="danger">
+
+                    <div class="danger-label">
+                        <span>Historical Impact</span>
+                        <span>93%</span>
+                    </div>
+
+                    <div class="danger-bar">
+                        <div class="danger-fill" style="width:93%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- STUXNET -->
+
+        <div class="virus-card">
+
+            <div class="card-top">
+                <div class="virus-icon">⚙️</div>
+                <h3>Stuxnet</h3>
+                <span class="year">Discovered: 2010</span>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    Stuxnet was an advanced computer worm
+                    designed to target industrial control
+                    systems.
+
+                    It became famous for demonstrating
+                    that malware could cause physical
+                    damage to industrial equipment.
+                </p>
+
+                <div class="info-row">
+                    <span>Malware Type</span>
+                    <span>Industrial Worm</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Year</span>
+                    <span>2010</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Primary Target</span>
+                    <span>Industrial Systems</span>
+                </div>
+
+                <div class="danger">
+
+                    <div class="danger-label">
+                        <span>Historical Impact</span>
+                        <span>99%</span>
+                    </div>
+
+                    <div class="danger-bar">
+                        <div class="danger-fill" style="width:99%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NOTPETYA -->
+
+        <div class="virus-card">
+
+            <div class="card-top">
+                <div class="virus-icon">💥</div>
+                <h3>NotPetya</h3>
+                <span class="year">Discovered: 2017</span>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    NotPetya appeared to be ransomware,
+                    but its destructive design made
+                    recovery extremely difficult.
+
+                    The outbreak disrupted major
+                    international companies and
+                    caused billions in losses.
+                </p>
+
+                <div class="info-row">
+                    <span>Malware Type</span>
+                    <span>Destructive Malware</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Year</span>
+                    <span>2017</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Primary Impact</span>
+                    <span>Data Destruction</span>
+                </div>
+
+                <div class="danger">
+
+                    <div class="danger-label">
+                        <span>Historical Impact</span>
+                        <span>100%</span>
+                    </div>
+
+                    <div class="danger-bar">
+                        <div class="danger-fill" style="width:100%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MELISSA -->
+
+        <div class="virus-card">
+
+            <div class="card-top">
+                <div class="virus-icon">📄</div>
+                <h3>Melissa</h3>
+                <span class="year">Discovered: 1999</span>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    Melissa was a macro virus that
+                    spread through infected Microsoft
+                    Word documents.
+
+                    It automatically emailed infected
+                    documents to contacts using
+                    Microsoft Outlook.
+                </p>
+
+                <div class="info-row">
+                    <span>Malware Type</span>
+                    <span>Macro Virus</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Year</span>
+                    <span>1999</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Primary Method</span>
+                    <span>Word Documents</span>
+                </div>
+
+                <div class="danger">
+
+                    <div class="danger-label">
+                        <span>Historical Impact</span>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="danger-bar">
+                        <div class="danger-fill" style="width:85%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CRYPTOLOCKER -->
+
+        <div class="virus-card">
+
+            <div class="card-top">
+                <div class="virus-icon">🔐</div>
+                <h3>CryptoLocker</h3>
+                <span class="year">Discovered: 2013</span>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    CryptoLocker became one of the
+                    most notorious early ransomware
+                    campaigns.
+
+                    It encrypted victims' files
+                    and demanded payment for
+                    decryption.
+                </p>
+
+                <div class="info-row">
+                    <span>Malware Type</span>
+                    <span>Ransomware</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Year</span>
+                    <span>2013</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Primary Impact</span>
+                    <span>File Encryption</span>
+                </div>
+
+                <div class="danger">
+
+                    <div class="danger-label">
+                        <span>Historical Impact</span>
+                        <span>92%</span>
+                    </div>
+
+                    <div class="danger-bar">
+                        <div class="danger-fill" style="width:92%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================
+     TIMELINE
+=========================== -->
+
+<section class="timeline" id="timeline">
+
+    <div class="section-title">
+
+        <h2>
+            MALWARE <span>TIMELINE</span>
+        </h2>
+
+        <p>
+            Important moments in the history
+            of malicious computer software.
+        </p>
+
+    </div>
+
+    <div class="timeline-container">
+
+        <div class="timeline-item">
+            <h3>1988</h3>
+            <h4>The Morris Worm</h4>
+            <p>
+                One of the first major Internet worms
+                spread across early networked computers
+                and caused widespread disruption.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>1999</h3>
+            <h4>Melissa</h4>
+            <p>
+                A macro virus demonstrated how quickly
+                infected documents could spread through
+                email systems.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>2000</h3>
+            <h4>ILOVEYOU</h4>
+            <p>
+                A deceptive email attachment triggered
+                one of the most famous malware
+                outbreaks in history.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>2004</h3>
+            <h4>Mydoom</h4>
+            <p>
+                Mydoom spread rapidly through email
+                and generated massive amounts
+                of malicious network traffic.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>2008</h3>
+            <h4>Conficker</h4>
+            <p>
+                A powerful network worm infected
+                millions of Windows computers
+                worldwide.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>2010</h3>
+            <h4>Stuxnet</h4>
+            <p>
+                A sophisticated worm revealed
+                the potential for cyberattacks
+                to damage physical infrastructure.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>2013</h3>
+            <h4>CryptoLocker</h4>
+            <p>
+                CryptoLocker helped establish
+                ransomware as a major
+                cybersecurity threat.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>2017</h3>
+            <h4>WannaCry and NotPetya</h4>
+            <p>
+                Two major global malware outbreaks
+                demonstrated the destructive
+                potential of ransomware and
+                rapidly spreading network attacks.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================
+     TERMINAL SIMULATION
+=========================== -->
+
+<section class="terminal-section" id="terminal">
+
+    <div class="section-title">
+
+        <h2>
+            THREAT <span>ANALYSIS TERMINAL</span>
+        </h2>
+
+        <p>
+            An interactive visual simulation
+            of a cybersecurity analysis terminal.
+            This demonstration does not scan
+            your computer or execute malware.
+        </p>
+
+    </div>
+
+    <div class="terminal">
+
+        <div class="terminal-header">
+
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+
+        </div>
+
+        <div class="terminal-body" id="terminalOutput">
+
+            <div>
+                CYBERTHREAT ANALYSIS SYSTEM v1.0
+            </div>
+
+            <div>
+                --------------------------------
+            </div>
+
+            <div>
+                Initializing historical threat database...
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================
+     PROTECTION
+=========================== -->
+
+<section id="protection">
+
+    <div class="section-title">
+
+        <h2>
+            HOW TO <span>STAY PROTECTED</span>
+        </h2>
+
+        <p>
+            Understanding historical malware
+            can help us defend against
+            modern cybersecurity threats.
+        </p>
+
+    </div>
+
+    <div class="protection-grid">
+
+        <div class="protection-card">
+
+            <h3>01. Update Software</h3>
+
+            <p>
+                Keep operating systems,
+                applications, and browsers
+                updated with the latest
+                security patches.
+            </p>
+
+        </div>
+
+        <div class="protection-card">
+
+            <h3>02. Use Security Software</h3>
+
+            <p>
+                Enable reputable antivirus
+                and endpoint protection
+                tools to help detect
+                malicious activity.
+            </p>
+
+        </div>
+
+        <div class="protection-card">
+
+            <h3>03. Avoid Suspicious Files</h3>
+
+            <p>
+                Be cautious with unexpected
+                attachments, downloads,
+                and links from unknown
+                senders.
+            </p>
+
+        </div>
+
+        <div class="protection-card">
+
+            <h3>04. Back Up Important Data</h3>
+
+            <p>
+                Maintain regular backups,
+                including offline or
+                otherwise isolated copies,
+                to reduce ransomware damage.
+            </p>
+
+        </div>
+
+        <div class="protection-card">
+
+            <h3>05. Use Strong Authentication</h3>
+
+            <p>
+                Protect accounts with
+                unique passwords and
+                multifactor authentication
+                whenever possible.
+            </p>
+
+        </div>
+
+        <div class="protection-card">
+
+            <h3>06. Learn Cybersecurity</h3>
+
+            <p>
+                Study how malware spreads,
+                how vulnerabilities are
+                patched, and how security
+                professionals investigate
+                suspicious behavior.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+
+<footer>
+
+    <h2>CYBERTHREAT</h2>
+
+    <p>
+        Exploring the history of the world's
+        most significant computer malware outbreaks.
+    </p>
+
+    <p>
+        Educational cybersecurity project.
+        No real malware is included.
+    </p>
+
+    <p style="margin-top:20px;">
+        © 2026 CyberThreat.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- ===========================
+     JAVASCRIPT
+=========================== -->
+
+<script>
+
+/* ===========================
+   VIRUS SEARCH FUNCTION
+=========================== */
+
+function searchViruses() {
+
+    const input = document.getElementById("virusSearch");
+
+    const filter = input.value.toLowerCase();
+
+    const cards = document.querySelectorAll(".virus-card");
+
+    cards.forEach(card => {
+
+        const text = card.textContent.toLowerCase();
+
+        if (text.includes(filter)) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* ===========================
+   TERMINAL ANIMATION
+=========================== */
+
+const terminalLines = [
+
+    "[SYSTEM] Loading historical malware records...",
+
+    "[OK] Malware database initialized.",
+
+    "[SYSTEM] Retrieving ILOVEYOU information...",
+
+    "[OK] ILOVEYOU - Email Worm - 2000",
+
+    "[SYSTEM] Retrieving Mydoom information...",
+
+    "[OK] Mydoom - Email Worm - 2004",
+
+    "[SYSTEM] Retrieving Conficker information...",
+
+    "[OK] Conficker - Network Worm - 2008",
+
+    "[SYSTEM] Retrieving Stuxnet information...",
+
+    "[OK] Stuxnet - Industrial Worm - 2010",
+
+    "[SYSTEM] Retrieving WannaCry information...",
+
+    "[OK] WannaCry - Ransomware Worm - 2017",
+
+    "[SYSTEM] Retrieving NotPetya information...",
+
+    "[OK] NotPetya - Destructive Malware - 2017",
+
+    "[SYSTEM] Historical analysis completed.",
+
+    "[SECURITY] No malware executed.",
+
+    "[STATUS] Educational simulation finished."
+
+];
+
+let terminalIndex = 0;
+
+const terminalOutput = document.getElementById("terminalOutput");
+
+function addTerminalLine() {
+
+    if (terminalIndex < terminalLines.length) {
+
+        const line = document.createElement("div");
+
+        line.textContent = terminalLines[terminalIndex];
+
+        terminalOutput.appendChild(line);
+
+        terminalIndex++;
+
+        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+
+        setTimeout(addTerminalLine, 500);
+
+    } else {
+
+        const cursor = document.createElement("span");
+
+        cursor.className = "cursor";
+
+        cursor.textContent = "█";
+
+        terminalOutput.appendChild(cursor);
+
+    }
+
+}
+
+setTimeout(addTerminalLine, 1000);
+
+
+/* ===========================
+   SCROLL REVEAL ANIMATION
+=========================== */
+
+const observer = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+
+                entry.target.style.transform = "translateY(0)";
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.1
+    }
+
+);
+
+const animatedElements = document.querySelectorAll(
+    ".virus-card, .timeline-item, .protection-card"
+);
+
+animatedElements.forEach(element => {
+
+    element.style.opacity = "0";
+
+    element.style.transform = "translateY(30px)";
+
+    element.style.transition =
+        "opacity 0.7s ease, transform 0.7s ease";
+
+    observer.observe(element);
+
+});
+
+
+/* ===========================
+   NAVIGATION EFFECT
+=========================== */
+
+window.addEventListener("scroll", () => {
+
+    const nav = document.querySelector("nav");
+
+    if (window.scrollY > 50) {
+
+        nav.style.boxShadow = "0 5px 30px #00000088";
+
+    } else {
+
+        nav.style.boxShadow = "none";
+
+    }
+
+});
+
+
+/* ===========================
+   HERO TITLE ANIMATION
+=========================== */
+
+const heroTitle = document.querySelector(".hero h1");
+
+heroTitle.style.opacity = "0";
+
+heroTitle.style.transform = "translateY(40px)";
+
+heroTitle.style.transition = "all 1s ease";
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        heroTitle.style.opacity = "1";
+
+        heroTitle.style.transform = "translateY(0)";
+
+    }, 300);
+
+});
+
+
+/* ===========================
+   CARD HOVER EFFECT
+=========================== */
+
+const virusCards = document.querySelectorAll(".virus-card");
+
+virusCards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.boxShadow = "0 15px 40px #00ff9d15";
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.boxShadow = "none";
+
+    });
+
+});
+
+
+/* ===========================
+   CONSOLE MESSAGE
+=========================== */
+
+console.log(
+    "%c CYBERTHREAT DATABASE ",
+    "background:#00ff9d;color:black;font-size:20px;padding:10px;"
+);
+
+console.log(
+    "Educational malware history website loaded successfully."
+);
+
+console.log(
+    "No malware is executed by this website."
+);
+
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
